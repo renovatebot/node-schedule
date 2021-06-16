@@ -1,6 +1,14 @@
-# lts-schedule
+# node-schedule
 
-> The node.js LTS schedule in JSON for programmatic usage
+> Utilities that Renovate bot will use to work with the upstream Node.js schedule
+
+## Thank you @ralphtheninja
+
+This package is based on the prior work of @ralphtheninja.
+The original work can be found here: https://github.com/ralphtheninja/lts-schedule.
+This repository is based on the files/history from commit `f86953a` of the original repository.
+
+Thank you very, very much @ralphtheninja for making the original package!
 
 ## Install
 
