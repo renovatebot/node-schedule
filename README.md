@@ -13,20 +13,20 @@ Thank you very, very much @ralphtheninja for making the original package!
 ## Install
 
 ```
-$ npm i lts-schedule -S
+$ npm i node-schedule -S
 ```
 
 ## Usage
 
 ```js
-const isEOL = require("lts-schedule").isEOL;
+const isEOL = require("node-schedule").isEOL;
 console.log(isEOL("v0.10")); // true
 console.log(isEOL("v0.12")); // true
 console.log(isEOL("v10")); // false
 ```
 
 ```js
-const json = require("lts-schedule").json;
+const json = require("node-schedule").json;
 console.log(JSON.stringify(json.v8, null, 2));
 ```
 
@@ -44,7 +44,7 @@ Yields:
 
 ## Api
 
-### `const schedule = require('lts-schedule')`
+### `const schedule = require('node-schedule')`
 
 Returns an object with the properties listed below.
 
