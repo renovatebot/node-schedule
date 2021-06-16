@@ -14,13 +14,17 @@
     "get-latest-schedule-wget": "wget -q https://raw.githubusercontent.com/nodejs/LTS/master/schedule.json -O schedule.json",
     "prettier-fix": "prettier --write \"**/*.{ts,js,mjs,json,md}\"",
     "prettier": "prettier --check \"**/*.{ts,js,mjs,json,md}\"",
-    "test": "jest"
+    "jest": "cross-env NODE_ENV=test LOG_LEVEL=fatal node --expose-gc node_modules/jest/bin/jest.js --logHeapUsage",
+    "jest-debug": "cross-env NODE_OPTIONS=--inspect-brk yarn jest",
+    "jest-silent": "cross-env yarn jest --reporters jest-silent-reporter"
   },
   "author": "Lars-Magnus Skog <ralphtheninja@riseup.net>",
   "keywords": [],
   "license": "MIT",
   "devDependencies": {
+    "cross-env": "7.0.3",
     "jest": "27.0.4",
+    "jest-silent-reporter": "0.5.0",
     "prettier": "2.3.1"
   },
   "engines": {
