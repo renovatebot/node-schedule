@@ -10,13 +10,13 @@ This repository is based on the files/history from commit `f86953a` of the origi
 
 Thank you very, very much @ralphtheninja for making the original package!
 
-## Install
+## Installation
 
 ```
 $ npm i node-schedule -S
 ```
 
-## Usage
+## How to use
 
 ```js
 const isEOL = require("node-schedule").isEOL;
@@ -42,7 +42,7 @@ Yields:
 }
 ```
 
-## Api
+## API
 
 ### `const schedule = require('node-schedule')`
 
