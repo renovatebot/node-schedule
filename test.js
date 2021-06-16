@@ -13,10 +13,10 @@ test('all releases in schedule.json contains required properties', t => {
 })
 
 test('isEOL - throws', t => {
-  t.throws(isEOL.bind(null, false), /invalid version type/)
-  t.throws(isEOL.bind(null, true), /invalid version type/)
-  t.throws(isEOL.bind(null, undefined), /invalid version type/)
-  t.throws(isEOL.bind(null, 'v0.11'), /unknown version v0.11/)
+  t.throws(isEOL.bind(null, false), /Invalid version type/)
+  t.throws(isEOL.bind(null, true), /Invalid version type/)
+  t.throws(isEOL.bind(null, undefined), /Invalid version type/)
+  t.throws(isEOL.bind(null, 'v0.11'), /Unknown version v0.11/)
   t.end()
 })
 

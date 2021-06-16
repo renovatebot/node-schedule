@@ -3,7 +3,7 @@ const json = require('./schedule.json')
 const isEOL = version => {
   if (typeof version !== 'number' &&
       typeof version !== 'string') {
-    throw new Error('invalid version type')
+    throw new Error('Invalid version type')
   }
 
   if (typeof version === 'number') {
@@ -25,7 +25,7 @@ const isEOL = version => {
 
   const meta = json[version]
   if (!meta) {
-    throw new Error(`unknown version ${version}`)
+    throw new Error(`Unknown version ${version}`)
   }
 
   return new Date() > new Date(meta.end)
