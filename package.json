@@ -18,7 +18,8 @@
     "jest-debug": "cross-env NODE_OPTIONS=--inspect-brk yarn jest",
     "jest-silent": "cross-env yarn jest --reporters jest-silent-reporter"
   },
-  "author": "Lars-Magnus Skog <ralphtheninja@riseup.net>",
+  "author": {"name": "HonkingGoose"},
+  "contributors": ["Lars-Magnus Skog <ralphtheninja@riseup.net>"],
   "keywords": [],
   "license": "MIT",
   "devDependencies": {
