@@ -75,5 +75,5 @@ An object with node.js versions as keys. Each release object has the following p
 
 ## Licenses
 
-[Original project license](ORIGINAL-LICENSE).
-[License for our additions](LICENSE).
+- [Original project license](ORIGINAL-LICENSE).
+- [License for our additions](LICENSE).
