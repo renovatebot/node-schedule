@@ -3,7 +3,7 @@ const main = require('.')
 const json = main.json
 const isEOL = main.isEOL
 
-test('all releases in schedule.json contains required properties', t => {
+test('all releases in schedule.json contain the required properties', t => {
   Object.keys(json).forEach(version => {
     const release = json[version]
     t.equal(typeof release.start, 'string', '.start exists')
