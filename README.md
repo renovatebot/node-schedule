@@ -12,9 +12,7 @@ Thank you very, very much @ralphtheninja for making the original package!
 
 ## Installation
 
-```
-$ npm i node-schedule -S
-```
+Installation instructions will be added once there's a published package.
 
 ## How to use
 
