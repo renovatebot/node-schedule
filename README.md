@@ -73,5 +73,7 @@ An object with node.js versions as keys. Each release object has the following p
 * `lts` (optional) date when lts release begins, required for lts releases
 * `maintenance` (optional) date when the maintenance period begins
 
-## License
-MIT
+## Licenses
+
+[Original project license](ORIGINAL-LICENSE).
+[License for our additions](LICENSE).
