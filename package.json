@@ -1,29 +1,25 @@
 {
-  "name": "lts-schedule",
-  "version": "2.2.0",
-  "description": "The LTS schedule in JSON. Extracted from https://github.com/nodejs/LTS",
+  "name": "node-schedule",
+  "version": "0.0.1",
+  "description": "Node schedule utilities for use with Renovate bot.",
   "main": "index.js",
-  "homepage": "https://github.com/ralphtheninja/lts-schedule",
+  "homepage": "https://github.com/renovatebot/node-schedule",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ralphtheninja/lts-schedule.git"
+    "url": "https://github.com/renovatebot/node-schedule.git"
   },
   "scripts": {
     "get-latest-schedule": "wget -q https://raw.githubusercontent.com/nodejs/LTS/master/schedule.json -O schedule.json",
     "test": "standard && node test"
   },
   "author": "Lars-Magnus Skog <ralphtheninja@riseup.net>",
-  "keywords": [
-    "lts",
-    "schedule",
-    "json"
-  ],
+  "keywords": [],
   "license": "MIT",
   "devDependencies": {
-    "standard": "^14.3.4",
-    "tape": "^5.0.1"
+    "standard": "14.3.4",
+    "tape": "5.0.1"
   },
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=14.0.0"
   }
 }
