@@ -4,7 +4,7 @@
 
 ## Thank you @ralphtheninja
 
-This package is based on the prior work of @ralphtheninja.
+This package is based on the prior work of [@ralphtheninja](https://github.com/ralphtheninja).
 The original work can be found here: https://github.com/ralphtheninja/lts-schedule.
 This repository is based on the files/history from commit `f86953a` of the original repository.
 
