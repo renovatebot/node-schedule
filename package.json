@@ -12,7 +12,7 @@
   "scripts": {
     "get-latest-schedule-wget": "wget -q https://raw.githubusercontent.com/nodejs/LTS/master/schedule.json -O schedule.json",
     "get-latest-schedule-curl": "curl -o schedule.json https://raw.githubusercontent.com/nodejs/LTS/master/schedule.json",
-    "test": "node test",
+    "test": "jest",
     "prettier": "prettier --check \"**/*.{ts,js,mjs,json,md}\"",
     "prettier-fix": "prettier --write \"**/*.{ts,js,mjs,json,md}\""
   },
@@ -20,8 +20,8 @@
   "keywords": [],
   "license": "MIT",
   "devDependencies": {
-    "prettier": "2.3.1",
-    "tape": "5.2.2"
+    "jest": "27.0.4",
+    "prettier": "2.3.1"
   },
   "engines": {
     "node": ">=14.0.0"
