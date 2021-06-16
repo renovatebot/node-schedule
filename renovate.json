@@ -1,0 +1,23 @@
+{
+  "extends": ["github>renovatebot/.github"],
+  "semanticCommitScope": "deps",
+  "automergeType": "pr",
+  "packageRules": [
+    {
+      "matchDepTypes": ["dependencies"],
+      "semanticCommitType": "build"
+    },
+    {
+      "matchPackageNames": ["semantic-release"],
+      "semanticCommitType": "build"
+    },
+    {
+      "matchPackageNames": ["@types/jest"],
+      "groupName": "jest monorepo"
+    },
+    {
+      "matchPaths": ["**/__fixtures__/**"],
+      "enabled": false
+    }
+  ]
+}
