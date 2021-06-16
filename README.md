@@ -71,7 +71,7 @@ Each release object has the following properties:
 - `start` (required) release start date
 - `end` (required) release end date
 - `codename` (optional) code name for the release
-- `lts` (optional) date when lts release begins, required for lts releases
+- `lts` (optional) date when LTS release begins, required for LTS releases
 - `maintenance` (optional) date when the maintenance period begins
 
 ## Licenses
