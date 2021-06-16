@@ -1,6 +1,7 @@
 {
   "name": "node-schedule",
   "version": "0.0.1",
+  "private": "true",
   "description": "Node schedule utilities for use with Renovate bot.",
   "main": "index.js",
   "homepage": "https://github.com/renovatebot/node-schedule",
