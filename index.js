@@ -1,35 +1,34 @@
-const json = require('./schedule.json')
+const json = require("./schedule.json");
 
-const isEOL = version => {
-  if (typeof version !== 'number' &&
-      typeof version !== 'string') {
-    throw new Error('Invalid version type')
+const isEOL = (version) => {
+  if (typeof version !== "number" && typeof version !== "string") {
+    throw new Error("Invalid version type");
   }
 
-  if (typeof version === 'number') {
-    version = String(version)
+  if (typeof version === "number") {
+    version = String(version);
   }
 
-  if (!version.startsWith('v')) {
-    version = `v${version}`
+  if (!version.startsWith("v")) {
+    version = `v${version}`;
   }
 
-  const semver = version.split('v')[1].split('.')
-  const major = semver[0]
+  const semver = version.split("v")[1].split(".");
+  const major = semver[0];
 
   if (Number(major) > 0) {
-    version = `v${major}`
+    version = `v${major}`;
   } else {
-    version = `v${major}.${semver[1]}`
+    version = `v${major}.${semver[1]}`;
   }
 
-  const meta = json[version]
+  const meta = json[version];
   if (!meta) {
-    throw new Error(`Unknown version ${version}`)
+    throw new Error(`Unknown version ${version}`);
   }
 
-  return new Date() > new Date(meta.end)
-}
+  return new Date() > new Date(meta.end);
+};
 
-exports.json = json
-exports.isEOL = isEOL
+exports.json = json;
+exports.isEOL = isEOL;

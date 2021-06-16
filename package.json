@@ -12,7 +12,9 @@
   "scripts": {
     "get-latest-schedule-wget": "wget -q https://raw.githubusercontent.com/nodejs/LTS/master/schedule.json -O schedule.json",
     "get-latest-schedule-curl": "curl -o schedule.json https://raw.githubusercontent.com/nodejs/LTS/master/schedule.json",
-    "test": "node test"
+    "test": "node test",
+    "prettier": "prettier --check \"**/*.{ts,js,mjs,json,md}\"",
+    "prettier-fix": "prettier --write \"**/*.{ts,js,mjs,json,md}\""
   },
   "author": "Lars-Magnus Skog <ralphtheninja@riseup.net>",
   "keywords": [],

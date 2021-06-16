@@ -19,15 +19,15 @@ $ npm i lts-schedule -S
 ## Usage
 
 ```js
-const isEOL = require('lts-schedule').isEOL
-console.log(isEOL('v0.10')) // true
-console.log(isEOL('v0.12')) // true
-console.log(isEOL('v10')) // false
+const isEOL = require("lts-schedule").isEOL;
+console.log(isEOL("v0.10")); // true
+console.log(isEOL("v0.12")); // true
+console.log(isEOL("v10")); // false
 ```
 
 ```js
-const json = require('lts-schedule').json
-console.log(JSON.stringify(json.v8, null, 2))
+const json = require("lts-schedule").json;
+console.log(JSON.stringify(json.v8, null, 2));
 ```
 
 Yields:
@@ -57,21 +57,21 @@ A function that returns `true` if `version` has reached End of Life (EOL), other
 The following calls are equivalent:
 
 ```js
-isEOL(4)
-isEOL('4')
-isEOL('v4')
-isEOL('v4.8.7')
+isEOL(4);
+isEOL("4");
+isEOL("v4");
+isEOL("v4.8.7");
 ```
 
 ### `schedule.json`
 
 An object with node.js versions as keys. Each release object has the following properties:
 
-* `start` (required) release start date
-* `end` (required) release end date
-* `codename` (optional) code name for the release
-* `lts` (optional) date when lts release begins, required for lts releases
-* `maintenance` (optional) date when the maintenance period begins
+- `start` (required) release start date
+- `end` (required) release end date
+- `codename` (optional) code name for the release
+- `lts` (optional) date when lts release begins, required for lts releases
+- `maintenance` (optional) date when the maintenance period begins
 
 ## Licenses
 

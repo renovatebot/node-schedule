@@ -1,7 +1,7 @@
 ---
 name: Bug report
 about: You've found a bug with node-schedule
-labels: 'type:bug, status:requirements, priority-5-triage'
+labels: "type:bug, status:requirements, priority-5-triage"
 ---
 
 <!--
