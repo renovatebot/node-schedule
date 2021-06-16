@@ -12,14 +12,13 @@
   "scripts": {
     "get-latest-schedule-wget": "wget -q https://raw.githubusercontent.com/nodejs/LTS/master/schedule.json -O schedule.json",
     "get-latest-schedule-curl": "curl -o schedule.json https://raw.githubusercontent.com/nodejs/LTS/master/schedule.json",
-    "test": "standard && node test"
+    "test": "node test"
   },
   "author": "Lars-Magnus Skog <ralphtheninja@riseup.net>",
   "keywords": [],
   "license": "MIT",
   "devDependencies": {
     "prettier": "2.3.1",
-    "standard": "16.0.3",
     "tape": "5.2.2"
   },
   "engines": {
