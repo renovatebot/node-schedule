@@ -10,11 +10,11 @@
     "url": "https://github.com/renovatebot/node-schedule.git"
   },
   "scripts": {
-    "get-latest-schedule-wget": "wget -q https://raw.githubusercontent.com/nodejs/LTS/master/schedule.json -O schedule.json",
     "get-latest-schedule-curl": "curl -o schedule.json https://raw.githubusercontent.com/nodejs/LTS/master/schedule.json",
-    "test": "jest",
+    "get-latest-schedule-wget": "wget -q https://raw.githubusercontent.com/nodejs/LTS/master/schedule.json -O schedule.json",
+    "prettier-fix": "prettier --write \"**/*.{ts,js,mjs,json,md}\"",
     "prettier": "prettier --check \"**/*.{ts,js,mjs,json,md}\"",
-    "prettier-fix": "prettier --write \"**/*.{ts,js,mjs,json,md}\""
+    "test": "jest"
   },
   "author": "Lars-Magnus Skog <ralphtheninja@riseup.net>",
   "keywords": [],
