@@ -18,6 +18,7 @@
   "keywords": [],
   "license": "MIT",
   "devDependencies": {
+    "prettier": "2.3.1",
     "standard": "16.0.3",
     "tape": "5.2.2"
   },
