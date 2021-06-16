@@ -17,8 +17,8 @@
   "keywords": [],
   "license": "MIT",
   "devDependencies": {
-    "standard": "14.3.4",
-    "tape": "5.0.1"
+    "standard": "16.0.3",
+    "tape": "5.2.2"
   },
   "engines": {
     "node": ">=14.0.0"
