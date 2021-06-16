@@ -1,3 +1,7 @@
+[![jest](https://github.com/renovatebot/node-schedule/actions/workflows/jest.yml/badge.svg)](https://github.com/renovatebot/node-schedule/actions/workflows/jest.yml)
+[![lint](https://github.com/renovatebot/node-schedule/actions/workflows/lint.yml/badge.svg)](https://github.com/renovatebot/node-schedule/actions/workflows/lint.yml)
+[![CodeQL](https://github.com/renovatebot/node-schedule/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/renovatebot/node-schedule/actions/workflows/codeql-analysis.yml)
+
 # node-schedule
 
 > Utilities that Renovate bot will use to work with the upstream Node.js schedule
