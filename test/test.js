@@ -1,4 +1,4 @@
-const main = require(".");
+const main = require("../src/index.js");
 const json = main.json;
 const isEOL = main.isEOL;
 

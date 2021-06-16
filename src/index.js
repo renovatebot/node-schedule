@@ -1,4 +1,4 @@
-const json = require("./schedule.json");
+const json = require("../schedule.json");
 
 const isEOL = (version) => {
   if (typeof version !== "number" && typeof version !== "string") {
