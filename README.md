@@ -65,7 +65,8 @@ isEOL("v4.8.7");
 
 ### `schedule.json`
 
-An object with node.js versions as keys. Each release object has the following properties:
+An object with node.js versions as keys.
+Each release object has the following properties:
 
 - `start` (required) release start date
 - `end` (required) release end date
