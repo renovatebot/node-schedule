@@ -10,7 +10,8 @@
     "url": "https://github.com/renovatebot/node-schedule.git"
   },
   "scripts": {
-    "get-latest-schedule": "wget -q https://raw.githubusercontent.com/nodejs/LTS/master/schedule.json -O schedule.json",
+    "get-latest-schedule-wget": "wget -q https://raw.githubusercontent.com/nodejs/LTS/master/schedule.json -O schedule.json",
+    "get-latest-schedule-curl": "curl -o schedule.json https://raw.githubusercontent.com/nodejs/LTS/master/schedule.json",
     "test": "standard && node test"
   },
   "author": "Lars-Magnus Skog <ralphtheninja@riseup.net>",
