@@ -13,7 +13,10 @@ name: "CodeQL"
 
 on:
   push:
+    branches: [ main ]
   pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ main ]
   schedule:
     - cron: '15 17 * * 5'
 
@@ -21,7 +24,6 @@ jobs:
   analyze:
     name: Analyze
     runs-on: ubuntu-latest
-    if: ${{ github.event_name != 'pull_request' || github.repository_owner != github.event.pull_request.head.repo.owner.login }}
     permissions:
       actions: read
       contents: read

@@ -2,12 +2,13 @@ name: lint
 
 on:
   push:
+    branches: [main]
   pull_request:
+    branches: [main]
 
 jobs:
   lint:
     runs-on: ubuntu-latest
-    if: ${{ github.event_name != 'pull_request' || github.repository_owner != github.event.pull_request.head.repo.owner.login }}
 
     strategy:
       matrix:
