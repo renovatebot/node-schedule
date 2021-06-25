@@ -1,9 +1,13 @@
 const json = require("../schedule.json");
 
-const isEOL = (version) => {
+function inputValidation(version) {
   if (typeof version !== "number" && typeof version !== "string") {
     throw new Error("Invalid version type");
   }
+}
+
+const isEOL = (version) => {
+  inputValidation(version);
 
   if (typeof version === "number") {
     version = String(version);
