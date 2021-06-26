@@ -9,6 +9,4 @@ module.exports = {
   collectCoverage: true,
   coverageDirectory: "./coverage",
   coverageReporters: ["html", "json", "text-summary"],
-  testEnvironment: "node",
-  testRunner: "jest-circus/runner",
 };
