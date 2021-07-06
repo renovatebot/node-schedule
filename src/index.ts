@@ -1,6 +1,6 @@
 import json from '../schedule.json';
 
-export interface ScheduleDetails {
+interface ScheduleDetails {
   codename?: string
   end: string,
   lts?: string,
