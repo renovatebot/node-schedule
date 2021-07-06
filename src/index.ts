@@ -1,12 +1,24 @@
-const json = require("../schedule.json");
+import json from '../schedule.json';
 
-function inputValidation(version) {
+export interface ScheduleDetails {
+  codename?: string
+  end: string,
+  lts?: string,
+  maintenance?: string,
+  start: string,
+};
+
+export interface Schedule {
+  [key: string]: ScheduleDetails
+};
+
+function inputValidation(version: any): asserts version is number | string {
   if (typeof version !== "number" && typeof version !== "string") {
     throw new Error("Invalid version type");
   }
 }
 
-const isEOL = (version) => {
+function isEOL(version: number | string): boolean {
   inputValidation(version);
 
   if (typeof version === "number") {
@@ -26,7 +38,7 @@ const isEOL = (version) => {
     version = `v${major}.${semver[1]}`;
   }
 
-  const meta = json[version];
+  const meta = (json as Schedule)[version];
   if (!meta) {
     throw new Error(`Unknown version ${version}`);
   }
@@ -34,5 +46,4 @@ const isEOL = (version) => {
   return new Date() > new Date(meta.end);
 };
 
-exports.json = json;
-exports.isEOL = isEOL;
+export { isEOL, json };

@@ -1,10 +1,8 @@
-const main = require("../src/index.js");
-const json = main.json;
-const isEOL = main.isEOL;
+import { isEOL, json, Schedule, ScheduleDetails } from '../index';
 
 test("all releases in schedule.json contain the required properties", () => {
   Object.keys(json).forEach((version) => {
-    const release = json[version];
+    const release = (json as Schedule)[version];
     expect(typeof release.start).toBe("string");
     expect(typeof release.end).toBe("string");
   });
