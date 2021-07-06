@@ -7,7 +7,7 @@
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    "outDir": "./built",
+    "outDir": "./build",
     "pretty": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
