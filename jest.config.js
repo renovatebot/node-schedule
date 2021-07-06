@@ -28,7 +28,7 @@ module.exports = {
       '**/__tests__/*.test.[jt]s'
     ],
     testPathIgnorePatterns: [
-      '/built/'
+      '/build/'
     ]
   }]
 };
