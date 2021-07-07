@@ -9,26 +9,6 @@ module.exports = {
   collectCoverage: true,
   coverageDirectory: "./coverage",
   coverageReporters: ["html", "json", "text-summary"],
-  moduleFileExtensions: [
-    'js',
-    'json',
-    'node',
-    'ts'
-  ],
-  projects: [{
-    displayName: 'test',
-    globals: {
-      'ts-jest': {
-        tsconfig: 'tsconfig.json',
-        diagnostics: true
-      }
-    },
-    preset: 'ts-jest/presets/js-with-ts',
-    testMatch: [
-      '**/__tests__/*.test.[jt]s'
-    ],
-    testPathIgnorePatterns: [
-      '/build/'
-    ]
-  }]
+    preset: 'ts-jest/presets/js-with-ts',    
+    modulePathIgnorePatterns: ['<rootDir>/dist/', '/__fixtures__/'],
 };
