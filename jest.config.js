@@ -9,6 +9,6 @@ module.exports = {
   collectCoverage: true,
   coverageDirectory: "./coverage",
   coverageReporters: ["html", "json", "text-summary"],
-    preset: 'ts-jest/presets/js-with-ts',    
-    modulePathIgnorePatterns: ['<rootDir>/dist/', '/__fixtures__/'],
+  preset: "ts-jest/presets/js-with-ts",
+  modulePathIgnorePatterns: ["<rootDir>/dist/", "/__fixtures__/"],
 };

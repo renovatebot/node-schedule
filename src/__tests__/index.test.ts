@@ -1,4 +1,4 @@
-import { isEOL, json, Schedule } from '../index';
+import { isEOL, json, Schedule } from "../index";
 
 test("all releases in schedule.json contain the required properties", () => {
   Object.keys(json).forEach((version) => {

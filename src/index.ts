@@ -1,16 +1,16 @@
-import json from '../schedule.json';
+import json from "../schedule.json";
 
 interface ScheduleDetails {
-  codename?: string
-  end: string,
-  lts?: string,
-  maintenance?: string,
-  start: string,
-};
+  codename?: string;
+  end: string;
+  lts?: string;
+  maintenance?: string;
+  start: string;
+}
 
 export interface Schedule {
-  [key: string]: ScheduleDetails
-};
+  [key: string]: ScheduleDetails;
+}
 
 function inputValidation(version: any): asserts version is number | string {
   if (typeof version !== "number" && typeof version !== "string") {
@@ -44,6 +44,6 @@ function isEOL(version: number | string): boolean {
   }
 
   return new Date() > new Date(meta.end);
-};
+}
 
 export { isEOL, json };
