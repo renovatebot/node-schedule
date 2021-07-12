@@ -1,6 +1,7 @@
+[![CodeQL](https://github.com/renovatebot/node-schedule/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/renovatebot/node-schedule/actions/workflows/codeql-analysis.yml)
+[![e2e](https://github.com/renovatebot/node-schedule/actions/workflows/e2e.yml/badge.svg)](https://github.com/renovatebot/node-schedule/actions/workflows/e2e.yml)
 [![jest](https://github.com/renovatebot/node-schedule/actions/workflows/jest.yml/badge.svg)](https://github.com/renovatebot/node-schedule/actions/workflows/jest.yml)
 [![lint](https://github.com/renovatebot/node-schedule/actions/workflows/lint.yml/badge.svg)](https://github.com/renovatebot/node-schedule/actions/workflows/lint.yml)
-[![CodeQL](https://github.com/renovatebot/node-schedule/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/renovatebot/node-schedule/actions/workflows/codeql-analysis.yml)
 
 # node-schedule
 
