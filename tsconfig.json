@@ -1,19 +1,23 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "esModuleInterop": true,
+    "lib": ["es2018"],
     "moduleResolution": "node",
     "module": "CommonJs",
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    "outDir": "./build",
-    "pretty": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
+    "outDir": "./dist",
+    "sourceMap": true,
     "strictNullChecks": true,
-    "target": "es6"
+    "target": "es2018",
+    "types": ["node"],
+
   },
-  "include": ["./src/**/*"],
-  "exclude": ["./node_modules/**/*", "./node_modules/**/**", "./jest.config.js"]
+  "exclude": [
+    "/node_modules",
+    "./.cache",
+    "./dist",
+    "**/__mocks__/*",
+    "coverage"
+  ]
 }

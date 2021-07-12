@@ -3,13 +3,16 @@
   "version": "0.0.1",
   "private": "true",
   "description": "Node schedule utilities for use with Renovate bot.",
-  "main": "build/index.js",
   "homepage": "https://github.com/renovatebot/node-schedule",
   "repository": {
     "type": "git",
     "url": "https://github.com/renovatebot/node-schedule.git"
   },
   "scripts": {
+    "build": "run-s clean compile:*",
+    "clean": "rimraf dist esm",
+    "compile:cjs": "tsc -p tsconfig.cjs.json",
+    "compile:esm": "tsc -p tsconfig.esm.json",
     "get-latest-schedule-curl": "curl -o schedule.json https://raw.githubusercontent.com/nodejs/LTS/master/schedule.json",
     "get-latest-schedule-wget": "wget -q https://raw.githubusercontent.com/nodejs/LTS/master/schedule.json -O schedule.json",
     "prettier-fix": "prettier --write \"**/*.{ts,js,mjs,json,md}\"",
@@ -17,13 +20,14 @@
     "jest": "cross-env NODE_ENV=test LOG_LEVEL=fatal node --expose-gc node_modules/jest/bin/jest.js --logHeapUsage",
     "jest-debug": "cross-env NODE_OPTIONS=--inspect-brk yarn jest",
     "jest-silent": "cross-env yarn jest --reporters jest-silent-reporter",
-    "test": "jest"
+    "test": "run-s -s jest"
   },
   "author": {
     "name": "HonkingGoose"
   },
   "contributors": [
-    "Lars-Magnus Skog <ralphtheninja@riseup.net>"
+    "Lars-Magnus Skog <ralphtheninja@riseup.net>",
+    "Michael Kriese <michael.kriese@visualon.de>"
   ],
   "keywords": [],
   "license": "MIT",
@@ -32,12 +36,30 @@
     "cross-env": "7.0.3",
     "jest": "27.0.6",
     "jest-silent-reporter": "0.5.0",
+    "npm-run-all": "4.1.5",
     "prettier": "2.3.2",
+    "rimraf": "3.0.2",
     "ts-jest": "27.0.3",
+    "ts-node": "10.1.0",
     "typescript": "4.3.5"
   },
   "engines": {
     "node": ">=14.15.0",
     "yarn": "^1.17.0"
+  },
+  "files": [
+    "schdule.json",
+    "dist",
+    "esm"
+  ],
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "module": "esm/index.js",
+  "types": "esm/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./cjs/entry.js",
+      "default": "./esm/entry.js"
+    }
   }
 }

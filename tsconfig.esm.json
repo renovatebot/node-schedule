@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.cjs",
+  "compilerOptions": {
+    "module": "ES2020",
+    "outDir": "./esm"
+  }
+}

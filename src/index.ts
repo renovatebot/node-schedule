@@ -1,6 +1,6 @@
-import json from "../schedule.json";
+import * as _json from '../schedule.json';
 
-interface ScheduleDetails {
+export interface ScheduleDetails {
   codename?: string;
   end: string;
   lts?: string;
@@ -12,24 +12,26 @@ export interface Schedule {
   [key: string]: ScheduleDetails;
 }
 
+const json = _json as Schedule;
+
 function inputValidation(version: any): asserts version is number | string {
-  if (typeof version !== "number" && typeof version !== "string") {
-    throw new Error("Invalid version type");
+  if (typeof version !== 'number' && typeof version !== 'string') {
+    throw new Error('Invalid version type');
   }
 }
 
 function isEOL(version: number | string): boolean {
   inputValidation(version);
 
-  if (typeof version === "number") {
+  if (typeof version === 'number') {
     version = String(version);
   }
 
-  if (!version.startsWith("v")) {
+  if (!version.startsWith('v')) {
     version = `v${version}`;
   }
 
-  const semver = version.split("v")[1].split(".");
+  const semver = version.split('v')[1].split('.');
   const major = semver[0];
 
   if (Number(major) > 0) {
@@ -38,7 +40,7 @@ function isEOL(version: number | string): boolean {
     version = `v${major}.${semver[1]}`;
   }
 
-  const meta = (json as Schedule)[version];
+  const meta = json[version];
   if (!meta) {
     throw new Error(`Unknown version ${version}`);
   }
