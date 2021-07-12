@@ -1,0 +1,12 @@
+{
+  "name": "schedule-test-cjs",
+  "private": true,
+  "version": "0.0.0",
+  "type": "commonjs",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "dependencies": {
+    "node-schedule": "file:../../node-schedule-0.0.0-semantic-release.tgz"
+  }
+}
