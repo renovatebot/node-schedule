@@ -16,6 +16,7 @@
     "fixup": "node tools/fixup.js",
     "get-latest-schedule-curl": "curl -o schedule.json https://raw.githubusercontent.com/nodejs/LTS/master/schedule.json && runs-s prepare:schedule",
     "get-latest-schedule-wget": "wget -q https://raw.githubusercontent.com/nodejs/LTS/master/schedule.json -O schedule.json && runs-s prepare:schedule",
+    "lint": "run-s prettier",
     "prettier-fix": "prettier --write \"**/*.{ts,js,mjs,json,md}\"",
     "prettier": "prettier --check \"**/*.{ts,js,mjs,json,md}\"",
     "jest": "cross-env NODE_ENV=test LOG_LEVEL=fatal node --expose-gc node_modules/jest/bin/jest.js --logHeapUsage",
