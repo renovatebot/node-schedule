@@ -21,14 +21,14 @@ Installation instructions will be added once there's a published package.
 ## How to use
 
 ```js
-const isEOL = require("node-schedule").isEOL;
-console.log(isEOL("v0.10")); // true
-console.log(isEOL("v0.12")); // true
-console.log(isEOL("v10")); // false
+const isEOL = require('node-schedule').isEOL;
+console.log(isEOL('v0.10')); // true
+console.log(isEOL('v0.12')); // true
+console.log(isEOL('v10')); // false
 ```
 
 ```js
-const json = require("node-schedule").json;
+const json = require('node-schedule').json;
 console.log(JSON.stringify(json.v8, null, 2));
 ```
 
@@ -60,9 +60,9 @@ The following calls are equivalent:
 
 ```js
 isEOL(4);
-isEOL("4");
-isEOL("v4");
-isEOL("v4.8.7");
+isEOL('4');
+isEOL('v4');
+isEOL('v4.8.7');
 ```
 
 ### `schedule.json`

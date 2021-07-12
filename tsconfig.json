@@ -10,8 +10,7 @@
     "sourceMap": true,
     "strictNullChecks": true,
     "target": "es2018",
-    "types": ["node"],
-
+    "types": ["node"]
   },
   "exclude": [
     "/node_modules",

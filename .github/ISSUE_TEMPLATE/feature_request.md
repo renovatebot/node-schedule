@@ -1,7 +1,7 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-labels: "type:feature, status:requirements, priority-5-triage"
+labels: 'type:feature, status:requirements, priority-5-triage'
 ---
 
 **What would you like node-schedule to be able to do?**
