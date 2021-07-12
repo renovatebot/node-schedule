@@ -5,8 +5,8 @@
 
 module.exports = {
   clearMocks: true,
-  cacheDirectory: ".cache/jest",
+  cacheDirectory: '.cache/jest',
   collectCoverage: true,
-  coverageDirectory: "./coverage",
-  coverageReporters: ["html", "json", "text-summary"],
+  coverageDirectory: './coverage',
+  coverageReporters: ['html', 'json', 'text-summary'],
 };
