@@ -1,23 +1,23 @@
-const json = require("../schedule.json");
+const json = require('../schedule.json');
 
 function inputValidation(version) {
-  if (typeof version !== "number" && typeof version !== "string") {
-    throw new Error("Invalid version type");
+  if (typeof version !== 'number' && typeof version !== 'string') {
+    throw new Error('Invalid version type');
   }
 }
 
 const isEOL = (version) => {
   inputValidation(version);
 
-  if (typeof version === "number") {
+  if (typeof version === 'number') {
     version = String(version);
   }
 
-  if (!version.startsWith("v")) {
+  if (!version.startsWith('v')) {
     version = `v${version}`;
   }
 
-  const semver = version.split("v")[1].split(".");
+  const semver = version.split('v')[1].split('.');
   const major = semver[0];
 
   if (Number(major) > 0) {
