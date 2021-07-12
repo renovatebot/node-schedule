@@ -24,7 +24,7 @@ const config: InitialOptionsTsJest = {
       isolatedModules: true,
     },
   },
-  preset: 'ts-jest',
+  preset: 'ts-jest/presets/js-with-ts',
   modulePathIgnorePatterns: [
     '<rootDir>/dist/',
     '<rootDir>/esm/',
