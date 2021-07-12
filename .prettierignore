@@ -16,5 +16,8 @@ bin/yarn*
 
 # generated code
 **/*.generated.ts
+/src/schedule.js
 /tools/dist
 /patches
+/esm
+/types

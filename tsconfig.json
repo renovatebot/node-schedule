@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": false,
+    "lib": ["es2018"],
+    "moduleResolution": "node",
+    "module": "CommonJs",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "outDir": "./dist",
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "target": "es2018",
+    "types": ["node"]
+  },
+  "exclude": [
+    "/node_modules",
+    "./.cache",
+    "./dist",
+    "**/__mocks__/*",
+    "coverage"
+  ]
+}

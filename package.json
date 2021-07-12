@@ -1,34 +1,46 @@
 {
   "name": "node-schedule",
-  "version": "0.0.1",
+  "version": "0.0.0-semantic-release",
   "private": "true",
   "description": "Node schedule utilities for use with Renovate bot.",
-  "main": "index.js",
   "homepage": "https://github.com/renovatebot/node-schedule",
   "repository": {
     "type": "git",
     "url": "https://github.com/renovatebot/node-schedule.git"
   },
   "scripts": {
-    "get-latest-schedule-curl": "curl -o schedule.json https://raw.githubusercontent.com/nodejs/LTS/master/schedule.json",
-    "get-latest-schedule-wget": "wget -q https://raw.githubusercontent.com/nodejs/LTS/master/schedule.json -O schedule.json",
+    "build": "run-s clean prepare:schedule compile:* fixup",
+    "clean": "rimraf dist esm types src/schedule.js",
+    "compile:cjs": "tsc -p tsconfig.cjs.json",
+    "compile:esm": "tsc -p tsconfig.esm.json",
+    "fixup": "node tools/fixup.js",
+    "get-latest-schedule-curl": "curl -o schedule.json https://raw.githubusercontent.com/nodejs/LTS/master/schedule.json && runs-s prepare:schedule",
+    "get-latest-schedule-wget": "wget -q https://raw.githubusercontent.com/nodejs/LTS/master/schedule.json -O schedule.json && runs-s prepare:schedule",
+    "lint": "run-s prettier",
     "prettier-fix": "prettier --write \"**/*.{ts,js,mjs,json,md}\"",
     "prettier": "prettier --check \"**/*.{ts,js,mjs,json,md}\"",
     "jest": "cross-env NODE_ENV=test LOG_LEVEL=fatal node --expose-gc node_modules/jest/bin/jest.js --logHeapUsage",
     "jest-debug": "cross-env NODE_OPTIONS=--inspect-brk yarn jest",
     "jest-silent": "cross-env yarn jest --reporters jest-silent-reporter",
-    "prepare": "husky install",
-    "test": "run-s jest"
+    "prepare": "run-s prepare:*",
+    "prepare:schedule": "node tools/compile-schedule.js",
+    "prepare:husky": "husky install",
+    "test": "run-s jest",
+    "test-e2e": "run-s test-e2e:*",
+    "test-e2e:cjs": "npm pack && cd e2e/cjs && rimraf ./node_modules && npm install --no-package-lock --no-audit && yarn test",
+    "test-e2e:esm": "npm pack && cd e2e/esm && rimraf ./node_modules && npm install --no-package-lock --no-audit && yarn test"
   },
   "author": {
     "name": "HonkingGoose"
   },
   "contributors": [
-    "Lars-Magnus Skog <ralphtheninja@riseup.net>"
+    "Lars-Magnus Skog <ralphtheninja@riseup.net>",
+    "Michael Kriese <michael.kriese@visualon.de>"
   ],
   "keywords": [],
   "license": "MIT",
   "devDependencies": {
+    "@types/jest": "26.0.23",
     "cross-env": "7.0.3",
     "husky": "7.0.1",
     "jest": "27.0.6",
@@ -36,10 +48,28 @@
     "npm-run-all": "4.1.5",
     "prettier": "2.3.2",
     "prettier-plugin-package": "1.3.0",
-    "pretty-quick": "3.1.1"
+    "pretty-quick": "3.1.1",
+    "rimraf": "3.0.2",
+    "ts-jest": "27.0.3",
+    "ts-node": "10.1.0",
+    "typescript": "4.3.5"
   },
   "engines": {
     "node": ">=14.15.0",
     "yarn": "^1.17.0"
+  },
+  "files": [
+    "dist",
+    "esm",
+    "types"
+  ],
+  "main": "./dist/index.js",
+  "module": "./esm/index.js",
+  "types": "./types/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "default": "./esm/index.js"
+    }
   }
 }

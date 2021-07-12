@@ -1,23 +1,22 @@
-const main = require('../src/index.js');
-const json = main.json;
-const isEOL = main.isEOL;
+import { it, expect } from '@jest/globals';
+import { isEOL, json, Schedule } from '.';
 
-test('all releases in schedule.json contain the required properties', () => {
+it('all releases in schedule.json contain the required properties', () => {
   Object.keys(json).forEach((version) => {
-    const release = json[version];
+    const release = (json as Schedule)[version];
     expect(typeof release.start).toBe('string');
     expect(typeof release.end).toBe('string');
   });
 });
 
-test('isEOL - throws', () => {
+it('isEOL - throws', () => {
   expect(isEOL.bind(null, false)).toThrowError(/Invalid version type/);
   expect(isEOL.bind(null, true)).toThrowError(/Invalid version type/);
   expect(isEOL.bind(null, undefined)).toThrowError(/Invalid version type/);
   expect(isEOL.bind(null, 'v0.11')).toThrowError(/Unknown version v0.11/);
 });
 
-test('isEOL accepts numbers and strings', () => {
+it('isEOL accepts numbers and strings', () => {
   expect(isEOL('0.10')).toBe(true);
   expect(isEOL('v0.10')).toBe(true);
   expect(isEOL('v0.10.48')).toBe(true);
