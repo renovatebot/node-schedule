@@ -121,7 +121,6 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-
 # generated files
 /esm/
 /types/
