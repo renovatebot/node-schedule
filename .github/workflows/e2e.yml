@@ -26,6 +26,9 @@ jobs:
       - name: Install dependencies with yarn
         run: yarn install --frozen-lockfile
 
+      - name: Build
+        run: yarn build
+
       - name: Run e2e
         run: yarn test-e2e:cjs
 
@@ -49,6 +52,9 @@ jobs:
 
       - name: Install dependencies with yarn
         run: yarn install --frozen-lockfile
+
+      - name: Build
+        run: yarn build
 
       - name: Run e2e
         run: yarn test-e2e:esm
