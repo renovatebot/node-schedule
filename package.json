@@ -1,6 +1,6 @@
 {
   "name": "node-schedule",
-  "version": "0.0.1",
+  "version": "0.0.0-semantic-release",
   "private": "true",
   "description": "Node schedule utilities for use with Renovate bot.",
   "homepage": "https://github.com/renovatebot/node-schedule",
@@ -9,19 +9,24 @@
     "url": "https://github.com/renovatebot/node-schedule.git"
   },
   "scripts": {
-    "build": "run-s clean compile:*",
-    "clean": "rimraf dist esm",
+    "build": "run-s clean prepare:schedule compile:* fixup",
+    "clean": "rimraf dist esm types src/schedule.js",
     "compile:cjs": "tsc -p tsconfig.cjs.json",
     "compile:esm": "tsc -p tsconfig.esm.json",
-    "get-latest-schedule-curl": "curl -o schedule.json https://raw.githubusercontent.com/nodejs/LTS/master/schedule.json",
-    "get-latest-schedule-wget": "wget -q https://raw.githubusercontent.com/nodejs/LTS/master/schedule.json -O schedule.json",
+    "fixup": "node tools/fixup.js",
+    "get-latest-schedule-curl": "curl -o schedule.json https://raw.githubusercontent.com/nodejs/LTS/master/schedule.json && runs-s prepare:schedule",
+    "get-latest-schedule-wget": "wget -q https://raw.githubusercontent.com/nodejs/LTS/master/schedule.json -O schedule.json && runs-s prepare:schedule",
     "prettier-fix": "prettier --write \"**/*.{ts,js,mjs,json,md}\"",
     "prettier": "prettier --check \"**/*.{ts,js,mjs,json,md}\"",
     "jest": "cross-env NODE_ENV=test LOG_LEVEL=fatal node --expose-gc node_modules/jest/bin/jest.js --logHeapUsage",
     "jest-debug": "cross-env NODE_OPTIONS=--inspect-brk yarn jest",
     "jest-silent": "cross-env yarn jest --reporters jest-silent-reporter",
-    "prepare": "husky install",
-    "test": "run-s jest"
+    "prepare:schedule": "node tools/compile-schedule.js",
+    "prepare:husky": "husky install",
+    "test": "run-s jest",
+    "test-e2e": "run-s test-e2e:*",
+    "test-e2e:cjs": "npm pack && cd e2e/cjs && rimraf ./node_modules && npm install --no-package-lock --no-audit && yarn test",
+    "test-e2e:esm": "npm pack && cd e2e/esm && rimraf ./node_modules && npm install --no-package-lock --no-audit && yarn test"
   },
   "author": {
     "name": "HonkingGoose"
@@ -52,18 +57,17 @@
     "yarn": "^1.17.0"
   },
   "files": [
-    "schdule.json",
     "dist",
-    "esm"
+    "esm",
+    "types"
   ],
-  "type": "commonjs",
-  "main": "dist/index.js",
-  "module": "esm/index.js",
-  "types": "esm/index.d.ts",
+  "main": "./dist/index.js",
+  "module": "./esm/index.js",
+  "types": "./types/index.d.ts",
   "exports": {
     ".": {
-      "require": "./cjs/entry.js",
-      "default": "./esm/entry.js"
+      "require": "./dist/index.js",
+      "default": "./esm/index.js"
     }
   }
 }

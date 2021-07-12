@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "allowJs": true,
+    "checkJs": false,
     "lib": ["es2018"],
     "moduleResolution": "node",
     "module": "CommonJs",

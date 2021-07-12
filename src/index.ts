@@ -1,4 +1,4 @@
-import * as _json from '../schedule.json';
+import _json from './schedule.js';
 
 export interface ScheduleDetails {
   codename?: string;

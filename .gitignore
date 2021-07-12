@@ -123,4 +123,6 @@ dist
 
 
 # generated files
-esm/
+/esm/
+/types/
+/src/schedule.js
