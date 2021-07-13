@@ -4,7 +4,9 @@
   "private": "true",
   "description": "Node schedule utilities for use with Renovate bot.",
   "homepage": "https://github.com/renovatebot/node-schedule",
-  "bugs": "https://github.com/renovatebot/node-schedule/issues",
+  "bugs": {
+    "url" : "https://github.com/renovatebot/node-schedule/issues"
+    },
   "repository": {
     "type": "git",
     "url": "https://github.com/renovatebot/node-schedule.git"
