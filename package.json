@@ -44,7 +44,7 @@
   "keywords": [],
   "license": "MIT",
   "devDependencies": {
-    "@types/jest": "28.1.4",
+    "@types/jest": "28.1.5",
     "cross-env": "7.0.3",
     "husky": "8.0.1",
     "jest": "28.1.2",
