@@ -6,7 +6,7 @@ labels: 'type:bug, status:requirements, priority-5-triage'
 
 <!--
       PLEASE DO NOT REPORT ANY SECURITY CONCERNS THIS WAY
-      Email renovate-disclosure@whitesourcesoftware.com instead.
+      Email renovate-disclosure@mend.io instead.
 -->
 
 **Describe the bug**
